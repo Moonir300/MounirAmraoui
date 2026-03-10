@@ -1,0 +1,1162 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mounir Amraoui · Kfz-Azubi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #faf9f6;
+        color: #1a1e24;
+        font-family: "Inter", sans-serif;
+        font-weight: 350;
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 5vw;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 8vw, 5rem);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        color: #1a1e24;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 520;
+      }
+
+      .large-quote {
+        line-height: 1.2;
+        margin: 1.8rem 0 1rem 0;
+        max-width: 100%;
+      }
+      .large-quote h1 {
+        font-size: clamp(1rem, 8vw, 3.5rem);
+        font-weight: 300;
+        color: #b89b5b;
+      }
+
+      .subhead {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: #5b5f67;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+      }
+
+      .nav {
+        display: flex;
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0.5rem 0 2rem 0;
+        border-bottom: 1px solid #ddd8cf;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: #2f353f;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+      }
+
+      .nav a:hover {
+        color: #b89b5b;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin: 2rem 0 4rem 0;
+      }
+
+      .hero-left p {
+        font-size: 1.1rem;
+        color: #3f4550;
+        max-width: 90%;
+      }
+
+      .hero-right {
+        background-color: #ece8e0;
+        background-image: url(./Mounir\ \(1\).webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center 20%;
+        min-height: 320px;
+        border-radius: 5px;
+      }
+
+      .about-left p {
+        font-size: 1.15rem;
+        font-weight: 300;
+        color: #2c313a;
+        margin-top: 1rem;
+      }
+
+      .about-right p:nth-child(2) {
+        font-size: 1.1rem;
+        color: #4a505b;
+        margin-block: 1.2rem;
+        line-height: 1.6;
+      }
+
+      .about-right i {
+        color: #b89b5b;
+        width: 20px;
+        margin-right: 8px;
+      }
+
+      /* Gallery action buttons */
+      .gallery-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .gallery-btn {
+        background: transparent;
+        border: 2px solid #b89b5b;
+        color: #b89b5b;
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        text-decoration: none;
+        backdrop-filter: blur(5px);
+      }
+
+      .gallery-btn:hover {
+        background: #b89b5b;
+        color: #faf9f6;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(184, 155, 91, 0.2);
+      }
+
+      .gallery-btn i {
+        font-size: 1.1rem;
+        color: inherit;
+      }
+
+      .gallery-btn:hover i
+       {
+        color: #faf9f6;
+      }
+
+      .create-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-top: 1px solid #ddd8cf;
+        border-bottom: 1px solid #ddd8cf;
+        padding: 1.6rem 0;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .create-row span {
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: #1a1e24;
+      }
+
+      .create-row small {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #b89b5b;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.8rem;
+        margin: 1.5rem 0;
+      }
+
+      .skill-list div {
+        font-size: 1rem;
+        border-left: 2px solid #b89b5b;
+        padding-left: 0.8rem;
+      }
+      .skill-list strong {
+        color: #b89b5b;
+        font-weight: 600;
+      }
+
+      .client-quote {
+        font-size: 1.9rem;
+        font-weight: 400;
+        font-style: italic;
+        color: #2c313a;
+        margin: 2.5rem 0;
+        line-height: 1.3;
+        border-left: 5px solid #d4af37;
+        padding-left: 2rem;
+      }
+
+      .journey {
+        margin: 4rem 0;
+      }
+
+      .company-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 1.8rem;
+      }
+
+      .company-item {
+        border-bottom: 1px solid #e0dbd2;
+        padding-bottom: 1.5rem;
+      }
+
+      .company-item h4 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+      }
+
+      .company-item .role {
+        font-weight: 600;
+        color: #b89b5b;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+      }
+
+      .company-item .years {
+        color: #7f8691;
+        font-size: 0.85rem;
+      }
+
+      .stats {
+        display: flex;
+        gap: clamp(2rem, 5vw, 4rem);
+        margin: 3rem 0;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        font-size: 2rem;
+        font-weight: 300;
+        border-left: 2px solid #d4af37;
+        padding-left: 1rem;
+      }
+
+      .stat-item small {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #6f7784;
+        text-transform: uppercase;
+      }
+
+      .featured {
+        background-color: #ece8e0;
+        padding: 1.8rem 2.2rem;
+        border-radius: 40px;
+        margin: 3rem 0;
+        font-size: 1.3rem;
+        font-weight: 300;
+      }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin: 4rem 0 2rem;
+        border-top: 1px solid #ddd8cf;
+        padding-top: 3rem;
+      }
+
+      .footer-col p {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #1a1e24;
+        font-size: 1rem;
+      }
+
+      .footer-col a {
+        display: block;
+        color: #5b5f67;
+        text-decoration: none;
+        margin-bottom: 0.4rem;
+        font-size: 0.9rem;
+        transition: color 0.1s;
+        cursor: pointer;
+      }
+
+      .footer-col a:hover {
+        color: #b89b5b;
+      }
+
+      #no-click{
+        pointer-events: none;
+      }
+
+
+      .copyright {
+        text-align: center;
+        color: #8f949e;
+        font-size: 0.8rem;
+        padding: 2rem 0 1rem;
+        border-top: 1px solid #e0dbd2;
+      }
+
+      /* ----- GALLERY MODAL (glassmorphism, fullscreen) ----- */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(20, 25, 35, 0.4);
+        backdrop-filter: blur(14px) saturate(180%);
+        -webkit-backdrop-filter: blur(14px) saturate(180%);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal.show {
+        display: flex;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        z-index: 1100;
+        transition: color 0.2s;
+        background: transparent;
+        border: none;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-close:hover {
+        color: #b89b5b;
+      }
+
+      .slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .slider-track {
+        display: flex;
+        transition: transform 0.4s ease;
+        width: 100%;
+      }
+
+      .slide {
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        flex-shrink: 0;
+      }
+
+      .slide.portrait-slide .gallery-item {
+        flex: 0 1 300px;
+        max-width: 300px;
+      }
+
+      .slide.landscape-slide .gallery-item {
+        flex: 0 1 450px;
+        max-width: 450px;
+      }
+
+      .gallery-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.2s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.02);
+      }
+
+      .gallery-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        cursor: pointer;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      .certificate-caption {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0.8rem;
+        font-weight: 300;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.2s;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .slider-arrow:hover {
+        background: rgba(184, 155, 91, 0.8);
+      }
+
+      .slider-arrow.left {
+        left: 20px;
+      }
+
+      .slider-arrow.right {
+        right: 20px;
+      }
+
+      .slide-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+        z-index: 10;
+      }
+
+      .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .indicator.active {
+        background: #b89b5b;
+        width: 24px;
+      }
+
+      /* ----- FULL-SCREEN PREVIEW MODAL WITH HOVER ZOOM ----- */
+      .preview-modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(10px);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .preview-modal.show {
+        display: flex;
+      }
+
+      .back-to-gallery {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 2.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        z-index: 2100;
+        transition: color 0.2s;
+        background: transparent;
+        border: none;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .back-to-gallery:hover {
+        color: #b89b5b;
+      }
+
+      .back-to-gallery span {
+        font-size: 1.2rem;
+        font-family: "Inter", sans-serif;
+      }
+
+      .back-to-gallery i.fas.fa-arrow-left {
+        width: fit-content;
+      }
+
+      /* Zoom container for preview mode */
+      .preview-zoom-container {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        cursor: crosshair;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .preview-zoom-container::after {
+        display: var(--display, none);
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        background-image: var(--url);
+        background-size: 220%;
+        background-position: var(--zoom-x) var(--zoom-y);
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .preview-image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border: none;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        display: block;
+      }
+
+      /* responsive */
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .hero-left p {
+          max-width: 100%;
+        }
+        .hero-right {
+          min-height: 380px;
+          order: -1;
+        }
+        .large-quote {
+          max-width: 100%;
+        }
+        .slide {
+          gap: 1rem;
+          padding: 1rem;
+        }
+        .slide.portrait-slide .gallery-item {
+          flex: 0 1 250px;
+        }
+        .slide.landscape-slide .gallery-item {
+          flex: 0 1 350px;
+        }
+        .modal-close {
+          top: 10px;
+          right: 20px;
+          font-size: 2.5rem;
+        }
+        .gallery-actions {
+          gap: 0.8rem;
+        }
+        .gallery-btn {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .company-list,
+        .footer-links {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .stats {
+          flex-direction: column;
+          gap: 1.2rem;
+        }
+        .stat-item {
+          border-left: none;
+          border-top: 2px solid #d4af37;
+          padding-left: 0;
+          padding-top: 0.8rem;
+        }
+        .create-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav {
+          justify-content: flex-start;
+        }
+        .slider-arrow {
+          width: 36px;
+          height: 36px;
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 3.1rem;
+        }
+        .large-quote {
+          font-size: 1.8rem;
+        }
+        .client-quote {
+          font-size: 1.5rem;
+          padding-left: 1.2rem;
+        }
+        .hero-right {
+          min-height: 280px;
+        }
+        .container {
+          padding: 0 4vw;
+        }
+        .slide {
+          flex-direction: column;
+        }
+        .slide.portrait-slide .gallery-item,
+        .slide.landscape-slide .gallery-item {
+          max-width: 90%;
+        }
+        .back-to-gallery {
+          top: 10px;
+          left: 15px;
+          font-size: 2rem;
+        }
+        .back-to-gallery span {
+          font-size: 1rem;
+        }
+        .gallery-actions {
+          flex-direction: column;
+          width: 100%;
+        }
+        .gallery-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      i.fas,
+      i.fab {
+        color: #b89b5b;
+        width: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="large-quote">
+        <h1>TECHNIK, DIE BEWEGT.<br />MIT HERZ UND HANDWERK.</h1>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="subhead">Über mich</div>
+          <h1>Mounir Amraoui</h1>
+          <p style="margin-top: 1rem">
+            21 Jahre, aus Algerien. Handwerklich begabt, technikbegeistert und
+            bereit, in Deutschland durchzustarten. Mein Ziel: eine Ausbildung in
+            einem modernen Automobilbetrieb.
+          </p>
+          <div class="about-left" style="margin-top: 2rem">
+            <div class="subhead">Die Vision</div>
+            <p>
+              Für mich ist Technik nicht nur Theorie – es ist Emotion, Rhythmus
+              und Wahrheit.
+            </p>
+          </div>
+          <div class="about-right" style="margin-top: 1.5rem">
+            <p>
+              Mit praktischer Erfahrung in der Fahrzeuginstandsetzung und Abitur
+              Maschinenbau (Mechanik 17/20, Mathe 15/20).
+            </p>
+            <p><i class="fas fa-map-pin"></i> Oran, bereit für Deutschland.</p>
+            <p>
+              <i class="fas fa-mug-hot"></i> Begeistert von Mechanik & gutem
+              Kaffee am Morgen.
+            </p>
+
+            <!-- Two gallery buttons under the about me left part -->
+            <div class="gallery-actions">
+              <button class="gallery-btn" id="showCertificatesBtn">
+                <i class="fas fa-certificate"></i> Zeugnisse ansehen
+              </button>
+              <button class="gallery-btn" id="showCVBtn">
+                <i class="fas fa-file-alt"></i> Lebenslauf ansehen
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right" aria-label="Portrait Mounir"></div>
+      </div>
+
+      <div class="create-row">
+        <span>Was ich mitbringe</span> <small>Fähigkeiten & Werkzeuge</small>
+      </div>
+
+      <div class="skill-list">
+        <div><strong>Diagnose</strong> · Fahrzeugelektronik</div>
+        <div><strong>Reparatur</strong> · Motor & Fahrwerk</div>
+        <div><strong>Ersatzteilrecherche</strong> · Beschaffung</div>
+        <div><strong>HTML/CSS</strong> · Webdesign</div>
+        <div><strong>MS Office</strong> · sicher</div>
+      </div>
+
+      <div class="client-quote">
+        „Ich habe nicht nur geholfen, ich habe das Problem gespürt!“
+      </div>
+
+      <div class="journey">
+        <div class="subhead">Stationen meines Wegs</div>
+        <p style="max-width: 700px; margin: 1rem 0 2rem">
+          Praktische Erfahrung, Abitur Maschinenbau, Webdesign.
+        </p>
+
+        <div class="company-list">
+          <div class="company-item">
+            <h4>Private Fahrzeuginstandsetzung</h4>
+            <div class="role">Mechanik & Diagnose</div>
+            <div class="years">2024 – 2025</div>
+          </div>
+          <div class="company-item">
+            <h4>Connect German School</h4>
+            <div class="role">Deutschkurs A1 – B1</div>
+            <div class="years">seit 08/2025</div>
+          </div>
+          <div class="company-item">
+            <h4>U.S.T.O. Oran</h4>
+            <div class="role">Studium Wissenschaft & Technik</div>
+            <div class="years">2024 – 2025 (1 Studienjahr)</div>
+          </div>
+          <div class="company-item">
+            <h4>Bakkalaureat Maschinenbau</h4>
+            <div class="role">Mechanik 17/20 · Mathe 15/20</div>
+            <div class="years">2024</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-item">4 <small>Sprachen</small></div>
+        <div class="stat-item">B1 <small>Deutsch</small></div>
+        <div class="stat-item">B2/C1 <small>Englisch</small></div>
+        <div class="stat-item">A2/B1 <small>Französisch</small></div>
+        <div class="stat-item">Muttersprachler <small>Arabisch</small></div>
+      </div>
+
+      <div style="margin: 4rem 0 2rem">
+        <div class="subhead">Lass uns connecten</div>
+        <p style="font-size: 1.6rem; font-weight: 300; line-height: 1.2">
+          Danke für deine Zeit.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <p>Kontakt</p>
+          <a href="mailto:moonir.amraoui@gmail.com">moonir.amraoui@gmail.com</a>
+          <a href="tel:+213783290860">+213 783 29 08 60</a>
+          <a id="no-click">31093</a>
+          <a id="no-click">Oran, Algerien</a>
+        </div>
+        <div class="footer-col">
+          <p>Dokumente</p>
+          <a id="showCVBtnFooter">Lebenslauf</a>
+          <a id="showCertificateBtnFooter">Zeugnisse</a>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 Mounir Amraoui · Bewerbung</div>
+    </div>
+
+    <!-- CERTIFICATES GALLERY MODAL (2 slides) -->
+    <div id="certificateModal" class="modal">
+      <button class="modal-close" id="closeGalleryBtn">&times;</button>
+
+      <div class="slider-container">
+        <button class="slider-arrow left" id="prevSlide">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="slider-track" id="sliderTrack">
+          <!-- Slide 1: two portrait certificates -->
+          <div class="slide portrait-slide">
+            <div class="gallery-item">
+              <img
+                src="./notes.webp"
+                alt="Bakkalaureat Zeugnis"
+                class="gallery-img"
+                onclick="openPreview(this.src)"
+              />
+              <span class="certificate-caption">Notenübersicht (ORIGINAL)</span>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="./Notenübersicht.webp"
+                alt="Weiteres Zertifikat"
+                class="gallery-img"
+                onclick="openPreview(this.src)"
+              />
+              <span class="certificate-caption"
+                >Notenübersicht (übersetzt)</span
+              >
+            </div>
+          </div>
+          <!-- Slide 2: two landscape note tables -->
+          <div class="slide landscape-slide">
+            <div class="gallery-item">
+              <img
+                src="./certificate.webp"
+                alt="Notentabelle"
+                class="gallery-img"
+                onclick="openPreview(this.src)"
+              />
+              <span class="certificate-caption">Abiturzeugnis (ORIGINAL)</span>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="./abiturzeugnis.webp"
+                alt="Weitere Noten"
+                class="gallery-img"
+                onclick="openPreview(this.src)"
+              />
+              <span class="certificate-caption">Abiturzeugnis (übersetzt)</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="slider-arrow right" id="nextSlide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="slide-indicators" id="slideIndicators">
+          <span class="indicator active" data-index="0"></span>
+          <span class="indicator" data-index="1"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CV GALLERY MODAL (single slide with 2 images) -->
+    <div id="cvModal" class="modal">
+      <button class="modal-close" id="closeCVBtn">&times;</button>
+
+      <div class="slider-container">
+        <div class="slider-track" id="cvSliderTrack">
+          <!-- Single slide with both CV pages side by side -->
+          <div class="slide portrait-slide">
+            <div class="gallery-item">
+              <img
+                src="./Lebenslauf-1.webp"
+                alt="Lebenslauf Seite 1"
+                class="gallery-img"
+                onclick="openPreview(this.src)"
+              />
+              <span class="certificate-caption">Lebenslauf · Seite 1</span>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="./Lebenslauf-2.webp"
+                alt="Lebenslauf Seite 2"
+                class="gallery-img"
+                onclick="openPreview(this.src)"
+              />
+              <span class="certificate-caption">Lebenslauf · Seite 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FULL-SCREEN PREVIEW MODAL WITH HOVER ZOOM -->
+    <div id="previewModal" class="preview-modal">
+      <button class="back-to-gallery" id="backToGalleryBtn">
+        <i class="fas fa-arrow-left"></i> <span>Zurück zur Galerie</span>
+      </button>
+      <div
+        id="previewZoomContainer"
+        class="preview-zoom-container"
+        style="
+          --url: url(&quot;&quot;);
+          --zoom-x: 0%;
+          --zoom-y: 0%;
+          --display: none;
+        "
+        onmousemove="updatePreviewZoom(event)"
+        onmouseout="hidePreviewZoom()"
+      >
+        <img
+          id="previewImage"
+          class="preview-image"
+          src=""
+          alt="Vollbildansicht"
+        />
+      </div>
+    </div>
+
+    <script>
+      // Elements
+      const certModal = document.getElementById("certificateModal");
+      const cvModal = document.getElementById("cvModal");
+      const previewModal = document.getElementById("previewModal");
+      const previewImage = document.getElementById("previewImage");
+      const previewZoomContainer = document.getElementById(
+        "previewZoomContainer",
+      );
+      const backToGalleryBtn = document.getElementById("backToGalleryBtn");
+
+      // Buttons that open certificate modal
+      const certButtons = [
+        document.getElementById("showCertificatesBtn"),
+        document.getElementById("showCertificateBtnFooter"),
+      ];
+
+      // Buttons that open CV modal
+      const cvButtons = [
+        document.getElementById("showCVBtn"),
+        document.getElementById("showCVBtnFooter"),
+      ];
+
+      // Close buttons
+      const closeGalleryBtn = document.getElementById("closeGalleryBtn");
+      const closeCVBtn = document.getElementById("closeCVBtn");
+
+      // Certificate slider elements (for 2 slides)
+      const certTrack = document.getElementById("sliderTrack");
+      const certSlides = document.querySelectorAll("#certificateModal .slide");
+      const certPrev = document.getElementById("prevSlide");
+      const certNext = document.getElementById("nextSlide");
+      const certIndicators = document.querySelectorAll(
+        "#certificateModal .indicator",
+      );
+
+      let certCurrent = 0;
+      const certTotal = certSlides.length;
+
+      // Open certificate modal
+      certButtons.forEach((btn) => {
+        if (btn) {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            certModal.classList.add("show");
+            document.body.style.overflow = "hidden";
+            resetCertSlider();
+          });
+        }
+      });
+
+      // Open CV modal
+      cvButtons.forEach((btn) => {
+        if (btn) {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            cvModal.classList.add("show");
+            document.body.style.overflow = "hidden";
+          });
+        }
+      });
+
+      // Close certificate modal
+      if (closeGalleryBtn) {
+        closeGalleryBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          certModal.classList.remove("show");
+          document.body.style.overflow = "";
+        });
+      }
+
+      // Close CV modal
+      if (closeCVBtn) {
+        closeCVBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          cvModal.classList.remove("show");
+          document.body.style.overflow = "";
+        });
+      }
+
+      // Close modals when clicking on background
+      certModal.addEventListener("click", function (e) {
+        if (e.target === certModal) {
+          certModal.classList.remove("show");
+          document.body.style.overflow = "";
+        }
+      });
+
+      cvModal.addEventListener("click", function (e) {
+        if (e.target === cvModal) {
+          cvModal.classList.remove("show");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // Certificate slider functions
+      function updateCertSlider() {
+        certTrack.style.transform = `translateX(-${certCurrent * 100}%)`;
+        certIndicators.forEach((ind, idx) => {
+          if (idx === certCurrent) {
+            ind.classList.add("active");
+          } else {
+            ind.classList.remove("active");
+          }
+        });
+      }
+
+      function nextCert() {
+        certCurrent = (certCurrent + 1) % certTotal;
+        updateCertSlider();
+      }
+
+      function prevCert() {
+        certCurrent = (certCurrent - 1 + certTotal) % certTotal;
+        updateCertSlider();
+      }
+
+      function resetCertSlider() {
+        certCurrent = 0;
+        updateCertSlider();
+      }
+
+      if (certPrev && certNext) {
+        certPrev.addEventListener("click", function (e) {
+          e.stopPropagation();
+          prevCert();
+        });
+
+        certNext.addEventListener("click", function (e) {
+          e.stopPropagation();
+          nextCert();
+        });
+      }
+
+      if (certIndicators) {
+        certIndicators.forEach((ind, idx) => {
+          ind.addEventListener("click", function (e) {
+            e.stopPropagation();
+            certCurrent = idx;
+            updateCertSlider();
+          });
+        });
+      }
+
+      // Open full-screen preview (sets the image and zoom background)
+      window.openPreview = function (src) {
+        previewImage.src = src;
+        previewZoomContainer.style.setProperty("--url", `url('${src}')`);
+        previewZoomContainer.style.setProperty("--display", "none");
+        previewModal.classList.add("show");
+        document.body.style.overflow = "hidden";
+      };
+
+      // Preview zoom functions (exactly as in example, but for preview modal)
+      window.updatePreviewZoom = function (event) {
+        const container = previewZoomContainer;
+        container.style.setProperty("--display", "block");
+        let rect = container.getBoundingClientRect();
+        let x = event.clientX - rect.left;
+        let y = event.clientY - rect.top;
+        let xPercent = (x * 100) / rect.width;
+        let yPercent = (y * 100) / rect.height;
+        container.style.setProperty("--zoom-x", xPercent + "%");
+        container.style.setProperty("--zoom-y", yPercent + "%");
+      };
+
+      window.hidePreviewZoom = function () {
+        previewZoomContainer.style.setProperty("--display", "none");
+      };
+
+      // Close preview and return to gallery
+      function closePreviewAndReturn() {
+        previewModal.classList.remove("show");
+      }
+
+      if (backToGalleryBtn) {
+        backToGalleryBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          closePreviewAndReturn();
+        });
+      }
+
+      previewModal.addEventListener("click", function (e) {
+        if (e.target === previewModal) {
+          closePreviewAndReturn();
+        }
+      });
+
+      // Escape key handling
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          if (previewModal.classList.contains("show")) {
+            closePreviewAndReturn();
+          } else if (certModal.classList.contains("show")) {
+            certModal.classList.remove("show");
+            document.body.style.overflow = "";
+          } else if (cvModal.classList.contains("show")) {
+            cvModal.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
