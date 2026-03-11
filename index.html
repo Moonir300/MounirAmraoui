@@ -170,8 +170,7 @@
         color: inherit;
       }
 
-      .gallery-btn:hover i
-       {
+      .gallery-btn:hover i {
         color: #faf9f6;
       }
 
@@ -324,10 +323,9 @@
         color: #b89b5b;
       }
 
-      #no-click{
+      #no-click {
         pointer-events: none;
       }
-
 
       .copyright {
         text-align: center;
@@ -550,10 +548,10 @@
         width: fit-content;
       }
 
-      /* Zoom container for preview mode */
+      /* Zoom container for preview mode - NOW FULL SCREEN */
       .preview-zoom-container {
-        width: 50%;
-        height: 100%;
+        width: 50% !important;
+        height: 100% !important;
         position: relative;
         cursor: crosshair;
         display: flex;
@@ -580,13 +578,15 @@
       .preview-image {
         max-width: 100%;
         max-height: 100%;
+        width: auto;
+        height: auto;
         object-fit: contain;
         border: none;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         display: block;
       }
 
-      /* responsive */
+      /* ===== MOBILE RESPONSIVENESS - COMPLETELY FIXED ===== */
       @media (max-width: 900px) {
         .hero-grid {
           grid-template-columns: 1fr;
@@ -601,21 +601,6 @@
         }
         .large-quote {
           max-width: 100%;
-        }
-        .slide {
-          gap: 1rem;
-          padding: 1rem;
-        }
-        .slide.portrait-slide .gallery-item {
-          flex: 0 1 250px;
-        }
-        .slide.landscape-slide .gallery-item {
-          flex: 0 1 350px;
-        }
-        .modal-close {
-          top: 10px;
-          right: 20px;
-          font-size: 2.5rem;
         }
         .gallery-actions {
           gap: 0.8rem;
@@ -649,13 +634,111 @@
         .nav {
           justify-content: flex-start;
         }
+      }
+
+      /* Gallery mobile fixes - consolidated and cleaned */
+      @media (max-width: 768px) {
+        .slider-container {
+          height: 90vh;
+        }
+
+        .slider-track {
+          height: 100%;
+        }
+
+        .slide {
+          flex-direction: column !important;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          padding: 15px;
+          height: 100%;
+        }
+
+        .slide.portrait-slide .gallery-item,
+        .slide.landscape-slide .gallery-item {
+          flex: none !important;
+          max-width: 280px;
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .gallery-img {
+          width: 100%;
+          height: auto;
+          max-height: 40vh;
+          object-fit: contain;
+        }
+
+        .gallery-item {
+          margin-bottom: 5px;
+        }
+
         .slider-arrow {
-          width: 36px;
-          height: 36px;
-          font-size: 1.5rem;
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+          background: rgba(0, 0, 0, 0.7);
+          z-index: 20;
+        }
+
+        .slider-arrow.left {
+          left: 5px;
+        }
+
+        .slider-arrow.right {
+          right: 5px;
+        }
+
+        .modal-close {
+          top: 10px;
+          right: 15px;
+          font-size: 2.5rem;
+          z-index: 30;
+        }
+
+        .slide-indicators {
+          bottom: 15px;
+          z-index: 20;
+        }
+
+        .indicator {
+          width: 8px;
+          height: 8px;
+        }
+
+        .indicator.active {
+          width: 20px;
+        }
+
+        .certificate-caption {
+          font-size: 0.7rem;
+          margin-top: 5px;
+          text-align: center;
+        }
+
+        .preview-zoom-container {
+          width: 100% !important;
+          height: 100% !important;
+        }
+
+        .preview-image {
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        .back-to-gallery {
+          top: 10px;
+          left: 15px;
+          font-size: 2rem;
+        }
+
+        .back-to-gallery span {
+          font-size: 0.9rem;
         }
       }
 
+      /* Small phones */
       @media (max-width: 480px) {
         h1 {
           font-size: 3.1rem;
@@ -673,28 +756,47 @@
         .container {
           padding: 0 4vw;
         }
-        .slide {
-          flex-direction: column;
-        }
+
         .slide.portrait-slide .gallery-item,
         .slide.landscape-slide .gallery-item {
-          max-width: 90%;
+          max-width: 240px;
         }
-        .back-to-gallery {
-          top: 10px;
-          left: 15px;
-          font-size: 2rem;
+
+        .gallery-img {
+          max-height: 35vh;
         }
-        .back-to-gallery span {
-          font-size: 1rem;
+
+        .slider-arrow {
+          width: 35px;
+          height: 35px;
         }
+
         .gallery-actions {
           flex-direction: column;
           width: 100%;
         }
+
         .gallery-btn {
           width: 100%;
           justify-content: center;
+        }
+      }
+
+      /* Landscape orientation */
+      @media (max-height: 500px) and (orientation: landscape) {
+        .slide {
+          flex-direction: row !important;
+          gap: 10px;
+        }
+
+        .slide.portrait-slide .gallery-item,
+        .slide.landscape-slide .gallery-item {
+          flex: 0 1 45%;
+          max-width: 200px;
+        }
+
+        .gallery-img {
+          max-height: 60vh;
         }
       }
 
@@ -738,7 +840,6 @@
               Kaffee am Morgen.
             </p>
 
-            <!-- Two gallery buttons under the about me left part -->
             <div class="gallery-actions">
               <button class="gallery-btn" id="showCertificatesBtn">
                 <i class="fas fa-certificate"></i> Zeugnisse ansehen
@@ -831,22 +932,19 @@
       <div class="copyright">© 2026 Mounir Amraoui · Bewerbung</div>
     </div>
 
-    <!-- CERTIFICATES GALLERY MODAL (2 slides) -->
+    <!-- CERTIFICATES GALLERY MODAL -->
     <div id="certificateModal" class="modal">
       <button class="modal-close" id="closeGalleryBtn">&times;</button>
-
       <div class="slider-container">
         <button class="slider-arrow left" id="prevSlide">
           <i class="fas fa-chevron-left"></i>
         </button>
-
         <div class="slider-track" id="sliderTrack">
-          <!-- Slide 1: two portrait certificates -->
           <div class="slide portrait-slide">
             <div class="gallery-item">
               <img
                 src="./notes.webp"
-                alt="Bakkalaureat Zeugnis"
+                alt="Notenübersicht ORIGINAL"
                 class="gallery-img"
                 onclick="openPreview(this.src)"
               />
@@ -855,7 +953,7 @@
             <div class="gallery-item">
               <img
                 src="./Notenübersicht.webp"
-                alt="Weiteres Zertifikat"
+                alt="Notenübersicht übersetzt"
                 class="gallery-img"
                 onclick="openPreview(this.src)"
               />
@@ -864,12 +962,11 @@
               >
             </div>
           </div>
-          <!-- Slide 2: two landscape note tables -->
           <div class="slide landscape-slide">
             <div class="gallery-item">
               <img
                 src="./certificate.webp"
-                alt="Notentabelle"
+                alt="Abiturzeugnis ORIGINAL"
                 class="gallery-img"
                 onclick="openPreview(this.src)"
               />
@@ -878,7 +975,7 @@
             <div class="gallery-item">
               <img
                 src="./abiturzeugnis.webp"
-                alt="Weitere Noten"
+                alt="Abiturzeugnis übersetzt"
                 class="gallery-img"
                 onclick="openPreview(this.src)"
               />
@@ -886,11 +983,9 @@
             </div>
           </div>
         </div>
-
         <button class="slider-arrow right" id="nextSlide">
           <i class="fas fa-chevron-right"></i>
         </button>
-
         <div class="slide-indicators" id="slideIndicators">
           <span class="indicator active" data-index="0"></span>
           <span class="indicator" data-index="1"></span>
@@ -898,13 +993,11 @@
       </div>
     </div>
 
-    <!-- CV GALLERY MODAL (single slide with 2 images) -->
+    <!-- CV GALLERY MODAL -->
     <div id="cvModal" class="modal">
       <button class="modal-close" id="closeCVBtn">&times;</button>
-
       <div class="slider-container">
         <div class="slider-track" id="cvSliderTrack">
-          <!-- Single slide with both CV pages side by side -->
           <div class="slide portrait-slide">
             <div class="gallery-item">
               <img
@@ -929,7 +1022,7 @@
       </div>
     </div>
 
-    <!-- FULL-SCREEN PREVIEW MODAL WITH HOVER ZOOM -->
+    <!-- FULL-SCREEN PREVIEW MODAL -->
     <div id="previewModal" class="preview-modal">
       <button class="back-to-gallery" id="backToGalleryBtn">
         <i class="fas fa-arrow-left"></i> <span>Zurück zur Galerie</span>
@@ -966,23 +1059,19 @@
       );
       const backToGalleryBtn = document.getElementById("backToGalleryBtn");
 
-      // Buttons that open certificate modal
+      // Buttons
       const certButtons = [
         document.getElementById("showCertificatesBtn"),
         document.getElementById("showCertificateBtnFooter"),
       ];
-
-      // Buttons that open CV modal
       const cvButtons = [
         document.getElementById("showCVBtn"),
         document.getElementById("showCVBtnFooter"),
       ];
-
-      // Close buttons
       const closeGalleryBtn = document.getElementById("closeGalleryBtn");
       const closeCVBtn = document.getElementById("closeCVBtn");
 
-      // Certificate slider elements (for 2 slides)
+      // Slider elements
       const certTrack = document.getElementById("sliderTrack");
       const certSlides = document.querySelectorAll("#certificateModal .slide");
       const certPrev = document.getElementById("prevSlide");
@@ -990,7 +1079,6 @@
       const certIndicators = document.querySelectorAll(
         "#certificateModal .indicator",
       );
-
       let certCurrent = 0;
       const certTotal = certSlides.length;
 
@@ -1099,7 +1187,7 @@
         });
       }
 
-      // Open full-screen preview (sets the image and zoom background)
+      // Preview functions
       window.openPreview = function (src) {
         previewImage.src = src;
         previewZoomContainer.style.setProperty("--url", `url('${src}')`);
@@ -1108,7 +1196,6 @@
         document.body.style.overflow = "hidden";
       };
 
-      // Preview zoom functions (exactly as in example, but for preview modal)
       window.updatePreviewZoom = function (event) {
         const container = previewZoomContainer;
         container.style.setProperty("--display", "block");
@@ -1125,7 +1212,6 @@
         previewZoomContainer.style.setProperty("--display", "none");
       };
 
-      // Close preview and return to gallery
       function closePreviewAndReturn() {
         previewModal.classList.remove("show");
       }
@@ -1143,7 +1229,7 @@
         }
       });
 
-      // Escape key handling
+      // Escape key
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
           if (previewModal.classList.contains("show")) {
